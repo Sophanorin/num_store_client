@@ -1,0 +1,8 @@
+.order_lists {
+  min-height: 90vh;
+}
+
+.order_lists h1 {
+  margin: 3rem auto;
+  text-align: center;
+}

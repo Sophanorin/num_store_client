@@ -1,0 +1,36 @@
+.wishlist {
+  min-height: 90vh;
+  width: 90%;
+  margin: 5rem auto;
+}
+
+.wishlist h1 {
+  margin: 1rem 0rem;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wishlist-btn {
+  border: none;
+  outline: 0;
+  border-radius: 0.2rem;
+  background: #ec5252;
+  color: #fff;
+  font-size: 1.7rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  text-align: center;
+  padding: 2rem 5rem;
+}
+.wishlist-btn:hover {
+  background: #a13838;
+}
+.wishlist-btn:focus {
+  border: none;
+}
