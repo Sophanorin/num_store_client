@@ -6,7 +6,20 @@
 }
 .loadingBox i {
   font-size: 2rem;
+  margin-right: 0.5rem;
+  animation: spining 0.5s ease-in-out forwards infinite;
+  transform-origin: center;
 }
+
 .loadingBox p {
   font-size: 1.5rem;
+}
+
+@keyframes spining {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
