@@ -31,6 +31,25 @@ function ShopScreen() {
     autoplaySpeed: 3000,
   };
 
+  const searchFilter = (product) => {
+    if (
+      product.title.toLowerCase().includes(query.toLowerCase()) ||
+      product.description.toLowerCase().includes(query.toLowerCase())
+    ) {
+      return true;
+    }
+  };
+
+  const categoryFilter = (product) => {
+    if (
+      product.category.toLowerCase() === filter.toLowerCase() ||
+      (filter.toLowerCase() === "all" &&
+        product.price > 0 &&
+        product.price <= price)
+    )
+      return true;
+  };
+
   useEffect(() => {
     dispatch(listProducts());
     dispatch(categorylist());
@@ -59,6 +78,14 @@ function ShopScreen() {
             <div className="products_section flex">
               <div className="filter">
                 <ul>
+                  <li>
+                    <label htmlFor="search"> Search : </label>
+                    <input
+                      id="search"
+                      placeholder="Search"
+                      onKeyUp={(e) => setQuery(e.target.value)}
+                    />
+                  </li>
                   <li>
                     <label htmlFor="category">Category : </label>
                     <select
@@ -91,13 +118,10 @@ function ShopScreen() {
               <div className="products_list">
                 <div className="category__center">
                   {products.map((product) => {
-                    if (
-                      product.category.toLowerCase() === filter.toLowerCase() ||
-                      (filter === "All" &&
-                        product.price > 0 &&
-                        product.price <= price)
-                    )
-                      return <Product key={product._id} product={product} />;
+                    if (categoryFilter(product)) {
+                      if (searchFilter(product))
+                        return <Product key={product._id} product={product} />;
+                    }
                   })}
                 </div>
               </div>

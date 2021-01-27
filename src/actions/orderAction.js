@@ -82,7 +82,6 @@ export const listOrderMine = () => async (dispatch, getState) => {
         },
       }
     );
-    console.log(data);
     dispatch({ type: ORDER_MINE_LIST_SUCCESS, payload: data });
   } catch (error) {
     dispatch({
