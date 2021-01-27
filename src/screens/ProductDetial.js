@@ -22,6 +22,15 @@ function ProductScreen(props) {
     props.history.push(`/cart/${productId}?qty=${qty}`);
   };
 
+  const copyLink = () => {
+    let str = "https://numstore.netlify.app" + props.location.pathname;
+    const tmp = document.createElement("textarea");
+    tmp.value = str;
+    document.body.appendChild(tmp);
+    tmp.select();
+    document.execCommand("Copy");
+  };
+
   useEffect(() => {
     dispatch(detialProduct(productId));
   }, [dispatch, productId]);
@@ -99,9 +108,9 @@ function ProductScreen(props) {
                   <ul>
                     <li>
                       <a
+                        onClick={copyLink}
                         href="#"
                         title="Facebook"
-                        target="_blank"
                         className="facebook social_icons"
                       >
                         <FaFacebookF />
@@ -109,9 +118,9 @@ function ProductScreen(props) {
                     </li>
                     <li>
                       <a
+                        onClick={copyLink}
                         href="#"
                         title="Twitter"
-                        target="_blank"
                         className="facebook social_icons"
                       >
                         <FaTwitter />
@@ -119,9 +128,9 @@ function ProductScreen(props) {
                     </li>
                     <li>
                       <a
+                        onClick={copyLink}
                         href="#"
                         title="Telegram"
-                        target="_blank"
                         className="facebook social_icons"
                       >
                         <FaTelegramPlane />
@@ -129,9 +138,9 @@ function ProductScreen(props) {
                     </li>
                     <li>
                       <a
+                        onClick={copyLink}
                         href="#"
                         title="Email"
-                        target="_blank"
                         className="facebook social_icons"
                       >
                         <MdEmail />

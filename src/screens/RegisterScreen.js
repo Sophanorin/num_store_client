@@ -12,6 +12,7 @@ function SigninScreen(props) {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [primaryMessage, setPrimaryMessage] = useState("");
   const dispatch = useDispatch();
 
   const redirect = props.location.search
@@ -23,10 +24,15 @@ function SigninScreen(props) {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    if (password !== confirmPassword) {
-      alert("Password and confirm password are not match");
+    setPrimaryMessage("");
+    if (password.length > 8) {
+      if (password !== confirmPassword) {
+        alert("Password and confirm password are not match");
+      } else {
+        dispatch(register(name, email, password, phoneNumber));
+      }
     } else {
-      dispatch(register(name, email, password, phoneNumber));
+      setPrimaryMessage("Password at least contains 8 digits.");
     }
   };
 
@@ -41,7 +47,10 @@ function SigninScreen(props) {
           <h1>Create Account</h1>
         </div>
         {loading && <LoadingBox></LoadingBox>}
-        {error && <MessageBox>{error}</MessageBox>}
+        {error ||
+          (primaryMessage && (
+            <MessageBox>{error || primaryMessage}</MessageBox>
+          ))}
         <div>
           <label htmlFor="name">Name : </label>
           <input
