@@ -17,18 +17,9 @@ import {
 export const categorylist = () => async (dispatch, getState) => {
   dispatch({ type: ALL_CATEGORY_REQUEST });
   try {
-    const {
-      userSignin: { userInfo },
-    } = getState();
     const { data } = await Axios.get(
-      "https://numstorerserver.herokuapp.com/api/category",
-      {
-        headers: {
-          authorization: `Bearer ${userInfo.token}`,
-        },
-      }
+      "https://numstorerserver.herokuapp.com/api/category"
     );
-
     dispatch({ type: ALL_CATEGORY_SUCCESS, payload: data });
   } catch (error) {
     dispatch({
