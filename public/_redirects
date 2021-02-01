@@ -1,2 +1,2 @@
 /* /index.html 200
-/products/*  /products/:id? 200
+/products/*  /products/:id? 301
