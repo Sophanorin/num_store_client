@@ -23,11 +23,10 @@ function Products() {
       ) : (
         <>
           <div className="header-productslist">
-            <h2>MAKE HAND</h2>
+            <h2>Quality Products</h2>
             <span>STUDENTS</span>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Laudantium, dolore?
+              There are products that quality make from students in university
             </p>
           </div>
           <div className="op category__center">

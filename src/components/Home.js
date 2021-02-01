@@ -12,9 +12,8 @@ function Home() {
       <div className="info">
         <h2>NUM STORE</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus,
-          quaerat rem molestias unde debitis sed! Iste a voluptatem repellendus
-          quo.
+          NUMSTORE is the store that created by students of National University
+          of Management in order to make a business for students in university.
         </p>
         <div className="control">
           <Link to="/contact" className="contact">

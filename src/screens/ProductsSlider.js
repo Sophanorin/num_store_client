@@ -54,10 +54,7 @@ function ProductsSlider({ number }) {
       <div className="header-productsslider">
         <span>NEW</span>
         <h2>New Arrivals</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste,
-          accusamus.
-        </p>
+        <p>New Products just come with good quality</p>
       </div>
       <div className="product__slider">
         <article className="carousel_wrapper">
