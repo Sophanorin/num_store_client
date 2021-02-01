@@ -29,8 +29,6 @@ import OrderListScreen from "./screens/OrderListScreen";
 import ProductEditScreen from "./screens/ProductEditScreen";
 import CategoryListScreen from "./screens/CategoryListScreen";
 function App() {
-  let { path, url } = useRouteMatch();
-
   return (
     <Router>
       <Header />
