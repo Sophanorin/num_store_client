@@ -50,11 +50,11 @@ function App() {
             </section>
           </main>
         </Route>
-        <Route path={`${path}/cart/:id?`} component={CartScreen} />
-        <Route path={`${path}/signin`} component={SigninScreen} />
-        <Route path={`${path}/contact`} component={ContactScreen} />
-        <Route path={`${path}/register`} component={RegisterScreen} />
-        <Route path={`${path}/checkout`} component={CheckoutScreen} />
+        <Route path={`/cart/:id?`} component={CartScreen} />
+        <Route path={`/signin`} component={SigninScreen} />
+        <Route path={`/contact`} component={ContactScreen} />
+        <Route path={`/register`} component={RegisterScreen} />
+        <Route path={`/checkout`} component={CheckoutScreen} />
         <Route path="/products/:id" exact component={ProductDetial} />
         <Route path={`${path}/shop`} component={ShopScreen} />
         <Route path="/order/:id" exact component={OrderDetailScreen} />
