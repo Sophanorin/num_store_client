@@ -43,68 +43,30 @@ function App() {
             </section>
           </main>
         </Route>
-        <Route
-          path="https://numstore.netlify.app/cart/:id?"
-          component={CartScreen}
-        />
-        <Route
-          path="https://numstore.netlify.app/signin"
-          component={SigninScreen}
-        />
-        <Route
-          path="https://numstore.netlify.app/contact"
-          component={ContactScreen}
-        />
-        <Route
-          path="https://numstore.netlify.app/register"
-          component={RegisterScreen}
-        />
-        <Route
-          path="https://numstore.netlify.app/checkout"
-          component={CheckoutScreen}
-        />
-        <Route
-          path="https://numstore.netlify.app/products/:id"
-          exact
-          component={ProductDetial}
-        />
-        <Route
-          path="https://numstore.netlify.app/shop"
-          component={ShopScreen}
-        />
-        <Route
-          path="https://numstore.netlify.app/order/:id"
-          exact
-          component={OrderDetailScreen}
-        />
-        <Route
-          path="https://numstore.netlify.app/ordershistory"
-          component={OrderHistoryScreen}
-        />
-        <Route
-          path="https://numstore.netlify.app/wishlist"
-          component={WishlistScreen}
-        />
+        <Route path="/cart/:id?" component={CartScreen} />
+        <Route path="/signin" component={SigninScreen} />
+        <Route path="/contact" component={ContactScreen} />
+        <Route path="/register" component={RegisterScreen} />
+        <Route path="/checkout" component={CheckoutScreen} />
+        <Route path="/products/:id" exact component={ProductDetial} />
+        <Route path="/shop" component={ShopScreen} />
+        <Route path="/order/:id" exact component={OrderDetailScreen} />
+        <Route path="/ordershistory" component={OrderHistoryScreen} />
+        <Route path="/wishlist" component={WishlistScreen} />
 
         <Route
-          path="https://numstore.netlify.app/product/:id/edit"
+          path="/product/:id/edit"
           component={ProductEditScreen}
           exact
         ></Route>
-        <PrivateRoute
-          path="https://numstore.netlify.app/profile"
-          component={ProfileScreen}
-        />
+        <PrivateRoute path="/profile" component={ProfileScreen} />
         <AdminRoute
-          path="https://numstore.netlify.app/productlist"
+          path="/productlist"
           component={ProductListsScreen}
         ></AdminRoute>
+        <AdminRoute path="/orderlist" component={OrderListScreen}></AdminRoute>
         <AdminRoute
-          path="https://numstore.netlify.app/orderlist"
-          component={OrderListScreen}
-        ></AdminRoute>
-        <AdminRoute
-          path="https://numstore.netlify.app/categorylist"
+          path="/categorylist"
           component={CategoryListScreen}
         ></AdminRoute>
         <Route path="*" component={UnavailablePage} />
