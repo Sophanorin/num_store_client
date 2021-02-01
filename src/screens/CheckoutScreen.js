@@ -22,8 +22,8 @@ function Checkout(props) {
   cart.itemsPrice = toPrice(
     cart.cartItems.reduce((a, c) => a + c.qty * c.price, 0)
   );
-  cart.taxPrice = toPrice(0.005 * cart.itemsPrice);
-  cart.deliveryPrice = cart.itemsPrice >= 20 ? 0 : 1;
+  cart.taxPrice = toPrice(0.0005 * cart.itemsPrice);
+  cart.deliveryPrice = cart.itemsPrice >= 20 ? 0 : 0.1;
   cart.totalPrice = cart.itemsPrice + cart.taxPrice + cart.deliveryPrice;
   const completeCheckoutHandler = () => {
     dispatch(createOrder({ ...cart, paymentMethod: paymentMethod }));
