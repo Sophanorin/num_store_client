@@ -68,7 +68,6 @@ function App() {
           path="/categorylist"
           component={CategoryListScreen}
         ></AdminRoute>
-        <Route path="*" component={UnavailablePage} />
       </Switch>
       <footer id="footer" className="section footer">
         <Footer />
