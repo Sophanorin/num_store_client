@@ -5,7 +5,12 @@ import Products from "./screens/Products";
 import Footer from "./components/Footer.js";
 import ShopScreen from "./screens/ShopScreen.js";
 import ProductsSlider from "./screens/ProductsSlider";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  useRouteMatch,
+} from "react-router-dom";
 import ProductDetial from "./screens/ProductDetial.js";
 import CartScreen from "./screens/CartScreen";
 import RegisterScreen from "./screens/RegisterScreen";
@@ -24,6 +29,8 @@ import OrderListScreen from "./screens/OrderListScreen";
 import ProductEditScreen from "./screens/ProductEditScreen";
 import CategoryListScreen from "./screens/CategoryListScreen";
 function App() {
+  let { path, url } = useRouteMatch();
+
   return (
     <Router>
       <Header />

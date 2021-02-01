@@ -19,7 +19,7 @@ function Home() {
           <Link to="/contact" className="contact">
             Contact Us
           </Link>
-          <Link to="https://numstore.netlify.app/shop" className="shop">
+          <Link to="/shop" className="shop">
             Shop Now
           </Link>
         </div>
