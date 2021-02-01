@@ -1,6 +1,5 @@
 {
   "name": "num__store",
-  "proxy": "https://numstore.netlify.app/",
   "homepage": "./",
   "version": "0.1.0",
   "type": "module",
