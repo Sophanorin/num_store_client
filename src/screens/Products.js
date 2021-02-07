@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Product from "../components/Product";
 import LoadingBox from "../components/LoadingBox";
@@ -10,6 +10,7 @@ function Products() {
   const dispatch = useDispatch();
   const productList = useSelector((state) => state.productList);
   const { error, products, loading } = productList;
+
   useEffect(() => {
     dispatch(listProducts());
   }, [dispatch]);
@@ -30,8 +31,7 @@ function Products() {
             </p>
           </div>
           <div className="op category__center">
-            {products.map((product, index) => {
-              if (index === 8) return;
+            {products.slice(0, 8).map((product, index) => {
               return <Product key={product._id} product={product} />;
             })}
           </div>
